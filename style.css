@@ -1,0 +1,91 @@
+/* Автор - Пряхин Игорь  ::  BART96  ::  Author - Prjakhin Igor */
+/* Уважайте чужой труд.  ::  Respect other peoples work. */
+
+::selection {background:rgba(0,0,0,.5) !important; color:aqua !important;}
+::-webkit-scrollbar {width:15px; }
+::-webkit-scrollbar-track {box-shadow:inset 0 0 10px #ffffff; background:#214025;}
+::-webkit-scrollbar-thumb {box-shadow:inset 0 0 6px #000000; background:#999999;}
+
+
+@font-face {font-family:'CraftyGirls'; src:url(./font/CraftyGirls.ttf) format('truetype');}
+
+
+body {margin:0; padding:0; color:white; font-size: 16px; background:#157878 fixed linear-gradient(60deg, #155799 0%,#159957 100%); font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;}
+
+a {color:#ddd; text-decoration:none; transition:.2s; position:relative;}
+a:hover {color:#fff;}
+a:active {color:#ddd;}
+a:before, a:after {content:''; position:absolute; display:block; height:1.5px; width:0; left:50%; bottom:0; background-color: white;}
+a:before {transition: width .2s ease-in-out, left .2s ease-in-out;}
+a:after {transition: width .2s ease-in-out;}
+a:hover::before {width:50%; left:0;}
+a:hover::after {width:50%;}
+
+
+
+/* >>> Foundation <<< */
+
+#app {display:flex; flex-direction:column; min-height:100vh;}
+#app #loader {flex:1 0 auto;}
+#app #content {flex:1 0 auto;}
+#app #footer {flex:0 0 auto;}
+#app > * > .container {max-width:1240px; margin:0 auto; padding:15px 30px;}
+
+
+
+/* >>> Loader <<< */
+
+#loader {display:flex; text-align:center; font-size:20px; font-family:'CraftyGirls';}
+#loader .container {display:flex; flex-wrap:wrap; justify-content:space-evenly; align-content:space-evenly;}
+#loader .container h1 {flex-basis:100%; margin:0;}
+#loader .container div {animation:blink 5s linear infinite; opacity:0; display:flex; flex-direction:column; flex-basis:170px; margin:0 10px;}
+#loader .container div img {animation:jump 5s linear infinite; align-self:center;}
+
+@keyframes blink {
+	0% {opacity:0;}
+	8% {opacity:1;}
+	90% {opacity:0;}
+}
+
+@keyframes jump {
+	0% {transform:translateY(0);}
+	4% {transform:translateY(-25px);}
+	8% {transform:translateY(0);}
+}
+
+#loader .container :nth-child(2) img,
+#loader .container :nth-child(2) {animation-delay: 0s;}
+#loader .container :nth-child(3) img,
+#loader .container :nth-child(3) {animation-delay:.2s;}
+#loader .container :nth-child(4) img,
+#loader .container :nth-child(4) {animation-delay:.4s;}
+#loader .container :nth-child(5) img,
+#loader .container :nth-child(5) {animation-delay:.6s;}
+#loader .container :nth-child(6) img,
+#loader .container :nth-child(6) {animation-delay:.8s;}
+#loader .container :nth-child(7) img,
+#loader .container :nth-child(7) {animation-delay: 1s;}
+
+
+
+/* >>> Header <<< */
+
+#header {background:rgba(255, 255, 255, 0.2);}
+#header .container img {width:100px; margin-bottom:-10px;}
+#header .container span {font-size:35px; font-family:''}
+
+
+
+/* >>> Content <<< */
+
+#content .container {display:grid; grid-gap:20px; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));}
+#content .container .card {background:#f1f1f1; border:1px solid black; border-radius:10px; color:black; padding:20px; word-wrap:break-word;}
+#content .container .card .name {font-size:1.5em; font-weight:500;}
+#content .container .card .desc {font-size: 18px; padding:15px 0;}
+#content .container .card button {font-size: 16px; width:100%; border-radius:5px; padding:10px; color:white; background-color: #6c757d; border-color: #6c757d; cursor:pointer; transition:.2s;}
+#content .container .card button:hover {background-color: #545b61;}
+
+
+/* >>> Footer <<< */
+
+#footer {background:rgba(255, 255, 255, 0.1); text-align:center;}
